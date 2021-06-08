@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Numerics;
 
@@ -20,17 +21,22 @@ namespace ProcesacimientoNubePuntos
             {
                 string[] componentes = lines[i].Split(' ');
 
-                float x = float.Parse(componentes[0]);
-                float y = float.Parse(componentes[1]);
-                float z = float.Parse(componentes[2]);
-                float temp = float.Parse(componentes[3]);
-                int index = (int)float.Parse(componentes[4]);
+                float x = float.Parse(componentes[0], CultureInfo.InvariantCulture);
+                //Console.WriteLine("X vale: " + x);
+                float y = float.Parse(componentes[1], CultureInfo.InvariantCulture);
+                float z = float.Parse(componentes[2], CultureInfo.InvariantCulture);
+                float temp = float.Parse(componentes[3], CultureInfo.InvariantCulture);
+                int index = (int)float.Parse(componentes[4], CultureInfo.InvariantCulture);
 
                 Punto punto = new Punto(new Vector3(x, y, z), temp, index);
                 nubeDePuntos.AddPunto(punto);
             }
 
             Console.WriteLine($"La nube de puntos tiene {nubeDePuntos.size} puntos");
+            Console.WriteLine($"El valor máximo de X es: {nubeDePuntos.MaxX} y el mínimo: {nubeDePuntos.MinX}");
+            Console.WriteLine($"El valor máximo de X es: {nubeDePuntos.MaxY} y el mínimo: {nubeDePuntos.MinY}");
+            Console.WriteLine($"El valor máximo de X es: {nubeDePuntos.MaxZ} y el mínimo: {nubeDePuntos.MinZ}");
+
             Console.ReadKey();
 
         }

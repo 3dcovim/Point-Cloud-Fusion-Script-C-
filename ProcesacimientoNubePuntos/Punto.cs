@@ -22,6 +22,7 @@ namespace ProcesacimientoNubePuntos
             set { m_location = value; }
         }
 
+
         public int IndexNube { get; set; } //Índice de la nube de puntos de la que viene
 
         public float Temperatura { get; set; } // Temperatura del punto
