@@ -16,15 +16,15 @@ namespace ProcesacimientoNubePuntos
 
         Vector3 m_location;
 
-        public Vector3 Location 
+        public Vector3 Location //Posición del punto x, y, z
         {
             get { return m_location; }
             set { m_location = value; }
         }
 
-        public int IndexNube { get; set; }
+        public int IndexNube { get; set; } //Índice de la nube de puntos de la que viene
 
-        public float Temperatura { get; set; }
+        public float Temperatura { get; set; } // Temperatura del punto
 
     }
 }
