@@ -28,91 +28,149 @@ namespace ProcesacimientoNubePuntos
 
         public List<Punto> Puntos = new List<Punto>();
 
-         public float MinX
+        private float m_minX = float.MaxValue;
+        public float MinX
         {
             get
             {
-                float minX = float.MaxValue;
-                foreach (Punto punto in Puntos)
+                if (m_minX == float.MaxValue)
                 {
-                    if (punto.Location.X < minX)
-                        minX = punto.Location.X;
+                    foreach (Punto punto in Puntos)
+                    {
+                        if (punto.Location.X < m_minX)
+                            m_minX = punto.Location.X;
+                    }
                 }
-                return minX;
+                return m_minX;
+            }
+            set
+            {
+                if (value < m_minX)
+                    m_minX = value;
             }
         }
 
+        private float m_minY = float.MaxValue;
         public float MinY
         {
             get
             {
-                float minY = float.MaxValue;
+                if(m_minY == float.MaxValue)
+                {
                 foreach (Punto punto in Puntos)
                 {
-                    if (punto.Location.Y < minY)
-                        minY = punto.Location.Y;
+                    if (punto.Location.Y < m_minY)
+                        m_minY = punto.Location.Y;
                 }
-                return minY;
+                }
+                return m_minY;
+            }
+            set
+            {
+                if (value < m_minY)
+                    m_minY = value;
             }
         }
-
+        private float m_minZ = float.MaxValue;
         public float MinZ
         {
             get
             {
-                float minZ = float.MaxValue;
-                foreach (Punto punto in Puntos)
+                if (m_minZ == float.MaxValue)
                 {
-                    if (punto.Location.Z < minZ)
-                        minZ = punto.Location.Z;
+                    foreach (Punto punto in Puntos)
+                    {
+                        if (punto.Location.Z < m_minZ)
+                            m_minZ = punto.Location.Z;
+                    }
                 }
-                return minZ;
+                return m_minZ;
+            }
+            set
+            {
+                if (value < m_minZ)
+                    m_minZ = value;
             }
         }
 
-
+        private float m_maxX = float.MinValue;
         public float MaxX
         {
             get
             {
-                float maxX = float.MinValue;
-                foreach (Punto punto in Puntos)
+                if (m_maxX == float.MinValue)
                 {
-                    if (punto.Location.X > maxX)
-                        maxX = punto.Location.X;
+                    foreach (Punto punto in Puntos)
+                    {
+                        if (punto.Location.X > m_maxX)
+                            m_maxX = punto.Location.X;
+                    }
                 }
-                return maxX;
+                return m_maxX;
+            }
+            set
+            {
+                if (value > m_maxX)
+                    m_maxX = value;
             }
         }
-
+        private float m_maxY = float.MinValue;
         public float MaxY
         {
             get
             {
-                float maxY = float.MinValue;
-                foreach (Punto punto in Puntos)
-                {
-                    if (punto.Location.Y > maxY)
-                        maxY = punto.Location.Y;
+                if (m_maxY == float.MinValue)
+{
+                    foreach (Punto punto in Puntos)
+                    {
+                        if (punto.Location.Y > m_maxY)
+                            m_maxY = punto.Location.Y;
+                    }
                 }
-                return maxY;
+                return m_maxY;
+            }
+            set
+            {
+                if (value > m_maxY)
+                    m_maxY = value;
             }
         }
-
+        private float m_maxZ = float.MinValue;
         public float MaxZ
         {
             get
             {
-                float maxZ = float.MinValue;
-                foreach (Punto punto in Puntos)
+                if (m_maxZ == float.MinValue)
                 {
-                    if (punto.Location.Z > maxZ)
-                        maxZ = punto.Location.Z;
+                    foreach (Punto punto in Puntos)
+                    {
+                        if (punto.Location.Z > m_maxZ)
+                            m_maxZ = punto.Location.Z;
+                    }
                 }
-                return maxZ;
+                return m_maxZ;
+            }
+            set
+            {
+                if (value > m_maxZ)
+                    m_maxZ = value;
             }
         }
 
+        public float LongX
+        {
+            get { return m_maxX - m_minX; }
+        }
+
+        public float LongY
+        {
+            get { return m_maxY - m_minY; }
+        }
+
+        public float LongZ
+        {
+            get { return m_maxZ - m_minZ; }
+        }
 
 
         public int size { get => this.Puntos.Count; }
