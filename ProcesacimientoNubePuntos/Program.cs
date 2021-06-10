@@ -95,7 +95,7 @@ namespace ProcesacimientoNubePuntos
             }
 
             campoVoxeles.GenerarNube();
-            Console.WriteLine("Nube creada");
+            Console.WriteLine("Proceso terminado.");
 
             Console.ReadKey();
 

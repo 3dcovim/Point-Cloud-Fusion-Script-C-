@@ -37,10 +37,12 @@ namespace ProcesacimientoNubePuntos
 
         public void GenerarNube()
         {
-            string path = @"C:\Users\3DCOVIM-Station 2\Documents\Desarrollo\Nubes de puntos\Scripts MatLab\NubeScriptSamuel.txt";
+            Console.WriteLine("¿Como quieres que se llame la nube de puntos?");
+            string nombreFile = Console.ReadLine();
+            string path = @"C:\Users\3DCOVIM-Station 2\Documents\Desarrollo\Nubes de puntos\Scripts MatLab\" + nombreFile+ ".txt";
             using (StreamWriter sw = File.CreateText(path))
             {
-                sw.WriteLine("X, Y, Z");
+                sw.WriteLine("X Y Z T1 T2 T3");
                 foreach(Voxel voxel in voxeles)
                 {
                     float temp1 = 0;
@@ -76,6 +78,8 @@ namespace ProcesacimientoNubePuntos
                     sw.WriteLine($"{voxel.Centro.X} {voxel.Centro.Y} {voxel.Centro.Z} {temp1} {temp2} {temp3}");
                 }
             }
+            Console.WriteLine("Nube creada");
+            Console.WriteLine($"La nube tiene {voxeles.Count} puntos.");
         }
     }
 }
