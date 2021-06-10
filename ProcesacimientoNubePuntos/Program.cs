@@ -51,7 +51,7 @@ namespace ProcesacimientoNubePuntos
 
             CampoVoxeles campoVoxeles = new CampoVoxeles(nubeDePuntos, ladoVoxel);
 
-            int indiceForEach = 0;
+            //int indiceForEach = 0;
             foreach (Punto punto in nubeDePuntos.Puntos)
             {
                 //Obtención del centro del Voxel al que pertecene cada punto
@@ -76,8 +76,10 @@ namespace ProcesacimientoNubePuntos
                     campoVoxeles.voxeles.Add(nuevoVoxel);
                     nuevoVoxel.Puntos.Add(punto);
                 }
-                Console.WriteLine(indiceForEach++);
+                //Console.WriteLine(indiceForEach++);
             }
+
+            campoVoxeles.GenerarNube();
 
             Console.ReadKey();
 
