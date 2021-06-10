@@ -45,10 +45,10 @@ namespace ProcesacimientoNubePuntos
                 sw.WriteLine("X Y Z T1 T2 T3");
                 foreach(Voxel voxel in voxeles)
                 {
-                    float temp1 = 0;
+                    float temp1 = 0; //Valor para la media de la temperatura de los puntos de la nube 1 que están en el Voxel
                     float temp2 = 0;
                     float temp3 = 0;
-                    int contadorPuntosNube1 = 0;
+                    int contadorPuntosNube1 = 0; //Cuenta el número de puntos de la nube 1 en el Voxel
                     int contadorPuntosNube2 = 0;
                     int contadorPuntosNube3 = 0;
 
