@@ -37,7 +37,7 @@ namespace ProcesacimientoNubePuntos
 
         public void GenerarNube()
         {
-            string path = @"C:\Users\3DCOVIM-Station 2\Documents\Desarrollo\Nubes de puntos\Scripts MatLab\NubeScriptSamue.txt";
+            string path = @"C:\Users\3DCOVIM-Station 2\Documents\Desarrollo\Nubes de puntos\Scripts MatLab\NubeScriptSamuel.txt";
             using (StreamWriter sw = File.CreateText(path))
             {
                 sw.WriteLine("X, Y, Z");
