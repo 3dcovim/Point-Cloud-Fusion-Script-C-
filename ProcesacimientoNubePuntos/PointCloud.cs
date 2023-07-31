@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProcesacimientoNubePuntos
+namespace PointCloudProcessing
 {
-    class NubeDePuntos
+    class PointCloud
     {
 
-        public NubeDePuntos()
+        public PointCloud()
         {
 
         }
-        public NubeDePuntos(Punto[] puntos)
+        public PointCloud(Point[] points)
         {
-            this.Puntos.Clear();
-            for(int i = 0; i < puntos.Length; i++)
+            this.Points.Clear();
+            for(int i = 0; i < points.Length; i++)
             {
-                this.Puntos.Add(puntos[i]);
+                this.Points.Add(points[i]);
             }
         }
 
-        public NubeDePuntos(List<Punto> puntos)
+        public PointCloud(List<Point> points)
         {
-            this.Puntos = puntos;
+            this.Points = points;
         }
 
 
-        public List<Punto> Puntos = new List<Punto>();
+        public List<Point> Points = new List<Point>();
 
         private float m_minX = float.MaxValue;
         public float MinX
@@ -35,7 +35,7 @@ namespace ProcesacimientoNubePuntos
             {
                 if (m_minX == float.MaxValue)
                 {
-                    foreach (Punto punto in Puntos)
+                    foreach (Point punto in Points)
                     {
                         if (punto.Location.X < m_minX)
                             m_minX = punto.Location.X;
@@ -57,10 +57,10 @@ namespace ProcesacimientoNubePuntos
             {
                 if(m_minY == float.MaxValue)
                 {
-                foreach (Punto punto in Puntos)
+                foreach (Point point in Points)
                 {
-                    if (punto.Location.Y < m_minY)
-                        m_minY = punto.Location.Y;
+                    if (point.Location.Y < m_minY)
+                        m_minY = point.Location.Y;
                 }
                 }
                 return m_minY;
@@ -78,10 +78,10 @@ namespace ProcesacimientoNubePuntos
             {
                 if (m_minZ == float.MaxValue)
                 {
-                    foreach (Punto punto in Puntos)
+                    foreach (Point point in Points)
                     {
-                        if (punto.Location.Z < m_minZ)
-                            m_minZ = punto.Location.Z;
+                        if (point.Location.Z < m_minZ)
+                            m_minZ = point.Location.Z;
                     }
                 }
                 return m_minZ;
@@ -100,10 +100,10 @@ namespace ProcesacimientoNubePuntos
             {
                 if (m_maxX == float.MinValue)
                 {
-                    foreach (Punto punto in Puntos)
+                    foreach (Point point in Points)
                     {
-                        if (punto.Location.X > m_maxX)
-                            m_maxX = punto.Location.X;
+                        if (point.Location.X > m_maxX)
+                            m_maxX = point.Location.X;
                     }
                 }
                 return m_maxX;
@@ -121,10 +121,10 @@ namespace ProcesacimientoNubePuntos
             {
                 if (m_maxY == float.MinValue)
 {
-                    foreach (Punto punto in Puntos)
+                    foreach (Point point in Points)
                     {
-                        if (punto.Location.Y > m_maxY)
-                            m_maxY = punto.Location.Y;
+                        if (point.Location.Y > m_maxY)
+                            m_maxY = point.Location.Y;
                     }
                 }
                 return m_maxY;
@@ -142,10 +142,10 @@ namespace ProcesacimientoNubePuntos
             {
                 if (m_maxZ == float.MinValue)
                 {
-                    foreach (Punto punto in Puntos)
+                    foreach (Point point in Points)
                     {
-                        if (punto.Location.Z > m_maxZ)
-                            m_maxZ = punto.Location.Z;
+                        if (point.Location.Z > m_maxZ)
+                            m_maxZ = point.Location.Z;
                     }
                 }
                 return m_maxZ;
@@ -173,11 +173,11 @@ namespace ProcesacimientoNubePuntos
         }
 
 
-        public int size { get => this.Puntos.Count; }
+        public int size { get => this.Points.Count; }
 
-        public void AddPunto(Punto punto)
+        public void AddPunto(Point point)
         {
-            Puntos.Add(punto);
+            Points.Add(point);
         }
 
     }

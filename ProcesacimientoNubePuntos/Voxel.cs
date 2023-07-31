@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.Numerics;
 
-namespace ProcesacimientoNubePuntos
+namespace PointCloudProcessing
 {
     class Voxel
     {
-        public Voxel(Vector3 centro, float lado)
+        public Voxel(Vector3 center, float side)
         {
-            this.Centro = centro;
-            this.Lado = lado;
-            Puntos.Clear();
+            this.Center = center;
+            this.Side = side;
+            Points.Clear();
         }
-        public float Lado
-        {
-            get;set;
-        }
-
-        public Vector3 Centro
+        public float Side
         {
             get;set;
         }
 
-        public List<Punto> Puntos = new List<Punto>();
+        public Vector3 Center
+        {
+            get;set;
+        }
+
+        public List<Point> Points = new List<Point>();
 
     }
 }
