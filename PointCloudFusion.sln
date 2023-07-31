@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33906.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointCloudFusion", "ProcesacimientoNubePuntos\PointCloudFusion.csproj", "{863EC113-4954-44F1-ABAF-5B426EB4A2B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointCloudFusion", "PointCloudProcessing\PointCloudFusion.csproj", "{863EC113-4954-44F1-ABAF-5B426EB4A2B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
